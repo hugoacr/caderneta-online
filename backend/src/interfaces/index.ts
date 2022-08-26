@@ -19,17 +19,17 @@ export interface IProcedure {
     price: number;
 };
 
-export interface ISalleOnCredit {
-    id: number;
-    patientId: number;
-    procedureId: number;
-    userId: number;
-};
-
 export interface IInstallment {
     id: number;
-    salle_id: number;
+    salleId: number;
     maturity: any;
     value: number;
     status: string;
+};
+
+export interface ISalleOnCredit {
+    installmentId: number;
+    patientId: number;
+    procedureId: number;
+    userId: number;
 };
