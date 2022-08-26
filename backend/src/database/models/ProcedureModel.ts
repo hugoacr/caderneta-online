@@ -1,6 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import db from '.';
-import { IProcedure } from '../../interfaces';
+import { IProcedure } from '../../interfaces/IModels';
 
 class Procedure extends Model implements IProcedure {
   public id!: number;

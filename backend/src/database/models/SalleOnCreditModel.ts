@@ -1,6 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import db from '.';
-import { ISalleOnCredit } from '../../interfaces';
+import { ISalleOnCredit } from '../../interfaces/IModels';
 import Patient from './PatientModel';
 import Procedure from './ProcedureModel';
 import Installment from './InstallmentModel';

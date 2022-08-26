@@ -1,6 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import db from '.';
-import { IInstallment } from '../../interfaces';
+import { IInstallment } from '../../interfaces/IModels';
 
 class Installment extends Model implements IInstallment {
   public id!: number;

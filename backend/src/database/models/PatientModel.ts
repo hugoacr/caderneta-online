@@ -1,6 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import db from '.';
-import { IPatient } from '../../interfaces';
+import { IPatient } from '../../interfaces/IModels';
 
 class Patient extends Model implements IPatient {
   public id!: number;
