@@ -25,7 +25,7 @@ module.exports = {
         },
         value: {
             allowNull: false,
-            type: Sequelize.DECIMAL(9, 2),
+            type: Sequelize.DECIMAL(10, 2),
         },
         status: {
           allowNull: false,
