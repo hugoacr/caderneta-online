@@ -8,7 +8,7 @@ class User extends Model implements IUser {
   public login!: string;
   public password!: string;
   public role!: string;
-}
+};
 
 User.init(
   {

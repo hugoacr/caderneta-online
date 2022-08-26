@@ -6,7 +6,7 @@ class Procedure extends Model implements IProcedure {
   public id!: number;
   public name!: string;
   public price!: number;
-}
+};
 
 Procedure.init(
   {

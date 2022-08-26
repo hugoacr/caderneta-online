@@ -7,7 +7,7 @@ class Patient extends Model implements IPatient {
   public name!: string;
   public address!: string;
   public phoneNumber!: string;
-}
+};
 
 Patient.init(
   {
