@@ -1,6 +1,9 @@
 import { DataTypes, Model } from 'sequelize';
 import db from '.';
 import { IInstallment } from '../../interfaces/IModels';
+import Patient from './PatientModel';
+import Procedure from './ProcedureModel';
+import SalleOnCredit from './SalleOnCreditModel';
 
 class Installment extends Model implements IInstallment {
   public id!: number;
@@ -17,10 +20,6 @@ Installment.init(
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER,
-    },
-    salleId: {
-        allowNull: false,
-        type: DataTypes.INTEGER,
     },
     maturity: {
       allowNull: false,
@@ -42,5 +41,19 @@ Installment.init(
     tableName: 'installments',
   },
 );
+
+Procedure.belongsToMany(Installment, {
+  foreignKey: 'procedureId',
+  otherKey: 'installmentId',
+  through: SalleOnCredit,
+  as: 'procedure',
+});
+
+Patient.belongsToMany(Installment, {
+  foreignKey: 'patientId',
+  otherKey: 'installmentId',
+  through: SalleOnCredit,
+  as: 'patient',
+});
 
 export default Installment;

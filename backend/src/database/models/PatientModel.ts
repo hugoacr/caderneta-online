@@ -25,7 +25,7 @@ Patient.init(
       allowNull: false,
       type: DataTypes.STRING,
     },
-    password: {
+    phoneNumber: {
       allowNull: false,
       type: DataTypes.STRING,
     },
