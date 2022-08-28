@@ -12,13 +12,6 @@ module.exports = {
           primaryKey: true,
           type: Sequelize.INTEGER,
         },
-        salle_id: {
-          allowNull: false,
-          type: Sequelize.INTEGER,
-          references: { model: 'salles_on_credit', key: 'id' },
-          onDelete: 'CASCADE',
-          onUpdate: 'CASCADE',
-        },
         maturity: {
             allowNull: false,
             type: Sequelize.DATE,
