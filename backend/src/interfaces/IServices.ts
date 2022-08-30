@@ -7,4 +7,5 @@ export interface ILoginService {
 
 export interface IInstallmentService {
     getInstallment(): Promise<InstallmentModel[]>,
+    newInstallments(dataIstallments: Omit<InstallmentModel, 'id' >[]): Promise<InstallmentModel[]>,
 }

@@ -28,10 +28,3 @@ export interface IInstallment {
     patientId: number;
     userId: number;
 };
-
-export interface ISaleOnCredit {
-    installmentId: number;
-    patientId: number;
-    procedureId: number;
-    userId: number;
-};

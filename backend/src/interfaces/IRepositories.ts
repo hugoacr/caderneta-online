@@ -7,4 +7,5 @@ export interface ILoginRepository {
 
 export interface IInstallmentRepository {
     getInstallment(): Promise<InstallmentModel[]>,
+    newInstallments(dataIstallments: Omit<InstallmentModel, 'id' >[]): Promise<InstallmentModel[]>,
 }
