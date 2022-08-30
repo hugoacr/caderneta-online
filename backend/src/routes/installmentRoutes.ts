@@ -14,9 +14,12 @@ const InstallmentFactory = () => {
     return controller;
   };
 
-  // userRouter.get('/', validateToken, (req, res, next) =>{
   InstallmentRouter.get('/', (req, res, next) =>{
     InstallmentFactory().getInstallment(req, res, next);
+  });
+
+  InstallmentRouter.post('/', (req, res, next) =>{
+    InstallmentFactory().newInstallments(req, res, next);
   });
 
 export default InstallmentRouter;
