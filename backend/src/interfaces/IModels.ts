@@ -21,13 +21,15 @@ export interface IProcedure {
 
 export interface IInstallment {
     id: number;
-    salleId: number;
-    maturity: any;
+    maturity: string;
     value: number;
     status: string;
+    procedureId: number;
+    patientId: number;
+    userId: number;
 };
 
-export interface ISalleOnCredit {
+export interface ISaleOnCredit {
     installmentId: number;
     patientId: number;
     procedureId: number;

@@ -3,14 +3,16 @@ import db from '.';
 import { IInstallment } from '../../interfaces/IModels';
 import Patient from './PatientModel';
 import Procedure from './ProcedureModel';
-import SalleOnCredit from './SalleOnCreditModel';
+import User from './UserModel';
 
 class Installment extends Model implements IInstallment {
   public id!: number;
-  public salleId!: number;
-  public maturity!: any;
+  public maturity!: string;
   public value!: number;
   public status!: string;
+  public procedureId!: number;
+  public patientId!: number;
+  public userId!: number;
 };
 
 Installment.init(
@@ -33,6 +35,9 @@ Installment.init(
       allowNull: false,
       type: DataTypes.STRING,
     },
+    procedureId: DataTypes.INTEGER,
+    patientId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER,
   },
   {
     underscored: true,
@@ -42,18 +47,8 @@ Installment.init(
   },
 );
 
-Procedure.belongsToMany(Installment, {
-  foreignKey: 'procedureId',
-  otherKey: 'installmentId',
-  through: SalleOnCredit,
-  as: 'procedure',
-});
-
-Patient.belongsToMany(Installment, {
-  foreignKey: 'patientId',
-  otherKey: 'installmentId',
-  through: SalleOnCredit,
-  as: 'patient',
-});
+Installment.belongsTo(User, { foreignKey: 'userId', as: 'user' });
+Installment.belongsTo(Procedure, { foreignKey: 'procedureId', as: 'procedure' });
+Installment.belongsTo(Patient, { foreignKey: 'patientId', as: 'patient' });
 
 export default Installment;
