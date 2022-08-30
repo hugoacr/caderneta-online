@@ -25,6 +25,30 @@ module.exports = {
           type: Sequelize.STRING,
           defaultValue: 'em aberto',
         },
+        patient_id: {
+          allowNull: false,
+          primaryKey: true,
+          type: Sequelize.INTEGER,
+          references: { model: 'patients', key: 'id' },
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE',
+        },
+        procedure_id: {
+          allowNull: false,
+          primaryKey: true,
+          type: Sequelize.INTEGER,
+          references: { model: 'procedures', key: 'id' },
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE',
+        },
+        user_id: {
+          allowNull: false,
+          primaryKey: true,
+          type: Sequelize.INTEGER,
+          references: { model: 'users', key: 'id' },
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE',
+        },
       });
     },
     down: async (queryInterface) => {
