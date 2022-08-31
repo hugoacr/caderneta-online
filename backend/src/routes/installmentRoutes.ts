@@ -15,7 +15,7 @@ const InstallmentFactory = () => {
   };
 
   InstallmentRouter.get('/', (req, res, next) =>{
-    InstallmentFactory().getInstallment(req, res, next);
+    InstallmentFactory().getInstallments(req, res, next);
   });
 
   InstallmentRouter.post('/', (req, res, next) =>{

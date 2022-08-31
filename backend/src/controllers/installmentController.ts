@@ -6,10 +6,10 @@ class InstallmentController {
     this.service = service;
   }
   
-  async getInstallment(_req: Request, res: Response, next: NextFunction) {
+  async getInstallments(_req: Request, res: Response, next: NextFunction) {
     try {
-    const teamsData = await this.service.getInstallment(); 
-    return res.status(200).send( teamsData );
+    const installmentData = await this.service.getInstallments(); 
+    return res.status(200).send( installmentData );
     } catch (error) {
     next(error);
     }
@@ -17,8 +17,8 @@ class InstallmentController {
 
   async newInstallments(req: Request, res: Response, next: NextFunction) {
     try {
-    const dataIstallments = req.body;
-    const createInstallment = await this.service.newInstallments(dataIstallments); 
+    const installmentData = req.body;
+    const createInstallment = await this.service.newInstallments(installmentData); 
     return res.status(201).send( createInstallment );
     } catch (error) {
     next(error);

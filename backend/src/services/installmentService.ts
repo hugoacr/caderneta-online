@@ -7,9 +7,9 @@ class InstallmentService implements IInstallmentService {
     this.model = model;
   }
 
-  public async getInstallment(): Promise<InstallmentModel[]> {
-    const teamsData = await this.model.getInstallment();
-    return teamsData as InstallmentModel[];
+  public async getInstallments(): Promise<InstallmentModel[]> {
+    const installmentsData = await this.model.getInstallments();
+    return installmentsData as InstallmentModel[];
   };
 
   public async newInstallments(dataInstallments: Omit<InstallmentModel, "id">[]): Promise<InstallmentModel[]> {
